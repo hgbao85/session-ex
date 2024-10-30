@@ -13,7 +13,6 @@ const UserSchema = new mongoose.Schema({
     }
 });
 
-// Mã hóa mật khẩu trước khi lưu
 UserSchema.pre('save', async function(next) {
     if (!this.isModified('password')) return next();
 
